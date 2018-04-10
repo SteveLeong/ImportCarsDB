@@ -2,7 +2,7 @@
 <html>
 <head>
 	<meta charset="UTF-8">
-	<title>Scarica gratis GARAGE Template html/css - Web Domus Italia - Web Agency </title>
+	<title><?php $title?> </title>
 	<meta name="description" content="Scarica gratis il nostro Template HTML/CSS GARAGE. Se avete bisogno di un design per il vostro sito web GARAGE può fare per voi. Web Domus Italia">
 	<meta name="author" content="Web Domus Italia">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
@@ -16,14 +16,8 @@
 <!-- Header -->
 <div class="allcontain">
 	<div class="header">
-			<ul class="socialicon">
-				<li><a href="#"><i class="fa fa-facebook"></i></a></li>
-				<li><a href="#"><i class="fa fa-twitter"></i></a></li>
-				<li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-				<li><a href="#"><i class="fa fa-pinterest"></i></a></li>
-			</ul>
 			<ul class="givusacall">
-				<li>Give us a call : +66666666 </li>
+				<li>Give us a call : +number </li>
 			</ul>
 			<ul class="logreg">
 				<li><a href="#">Login </a> </li>
@@ -45,13 +39,11 @@
 		</div>
 		<div class="collapse navbar-collapse" id="upmenu">
 			<ul class="nav navbar-nav" id="navbarontop">
-				<li class="active"><a href="#">HOME</a> </li>
+				<li class="active"><a href="index.php">HOME</a> </li>
 				<li class="dropdown">
 					<a href="#" class="dropdown-toggle"	data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">CATEGORIES <span class="caret"></span></a>
 					<ul class="dropdown-menu dropdowncostume">
-						<li><a href="#">Sport</a></li>
-						<li><a href="#">Old</a></li>
-						<li><a href="#">New</a></li>
+						<?php $content?>
 					</ul>
 				</li>
 				<li class="dropdown">
@@ -63,7 +55,7 @@
 						</ul>
 				</li>
 				<li>
-					<a href="contact.html">CONTACT</a>
+					<a href="CarTemp.php">CONTACT</a>
  
 				</li>
 				<button><span class="postnewcar">POST NEW CAR</span></button>
@@ -170,7 +162,7 @@
 					</div>
 					<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 txt1colon ">
 						<div class="featurecontant">
-							<h1>LOREM IPSUM</h1>
+							<h1>LOREM daskbj</h1>
 							<p>"Lorem ipsum dolor sit amet, consectetur ,<br>
 			 						sed do eiusmod tempor incididunt </p>
 			 				<h2>Price &euro;</h2>
