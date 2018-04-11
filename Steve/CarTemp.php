@@ -55,7 +55,7 @@
 						</ul>
 				</li>
 				<li>
-					<a href="CarTemp.php">CONTACT</a>
+					<a href="CarTemp.php">ALL CARS</a>
  
 				</li>
 				<button><span class="postnewcar">POST NEW CAR</span></button>
