@@ -43,7 +43,8 @@
 				<li class="dropdown">
 					<a href="#" class="dropdown-toggle"	data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">CATEGORIES <span class="caret"></span></a>
 					<ul class="dropdown-menu dropdowncostume">
-						<?php $content?>
+						<li><a href="CarCategoryJ.php">Japanese</a></li>
+						<li><a href="CarCategoryE.php">European</a></li>
 					</ul>
 				</li>
 				<li class="dropdown">
@@ -55,7 +56,7 @@
 						</ul>
 				</li>
 				<li>
-					<a href="CarTemp.php">ALL CARS</a>
+					<a href="AllCars.php">ALL CARS</a>
  
 				</li>
 				<button><span class="postnewcar">POST NEW CAR</span></button>

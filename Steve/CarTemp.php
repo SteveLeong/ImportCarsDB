@@ -43,7 +43,8 @@
 				<li class="dropdown">
 					<a href="#" class="dropdown-toggle"	data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">CATEGORIES <span class="caret"></span></a>
 					<ul class="dropdown-menu dropdowncostume">
-						<?php?>
+						<li><a href="CarCategoryJ.php">Japanese</a></li>
+						<li><a href="CarCategoryE.php">European</a></li>
 					</ul>
 				</li>
 				<li class="dropdown">
@@ -55,7 +56,7 @@
 						</ul>
 				</li>
 				<li>
-					<a href="CarTemp.php">ALL CARS</a>
+					<a href="AllCars.php">ALL CARS</a>
  
 				</li>
 				<button><span class="postnewcar">POST NEW CAR</span></button>
@@ -63,7 +64,6 @@
 		</div>
 	</nav>
 </div>
-<!--_______________________________________ Carousel__________________________________ -->
 
 <!-- ____________________Featured Section ______________________________--> 
 <div class="allcontain">
@@ -74,21 +74,18 @@
 		<div class="row firstrow">
 
 			<?php 
-				$user = 'root';
-				$password = 'root';
-				$database = 'ImportCarsDB';
-				$host = 'localhost';
+				require 'Credentials.php';
 				$conn = new mysqli($host, $user, $password, $database);
 				// Check connection
 				if ($conn->connect_error) {
 					die("Connection failed: " . $conn->connect_error);
 				} 
-				$model = 'Nissan GTR';
 				// SQL QUERY
-				$sql = "SELECT * FROM car";
+				$sql = $query;
 				$result = $conn->query($sql);
 
 				if ($result->num_rows > 0) {
+
 					while ($row = $result->fetch_assoc()) {
 
 						$headdivs = '<div class="col-lg-6 costumcol colborder1">
@@ -101,25 +98,14 @@
 
 						echo $headdivs . "
 										<h1>" . $row["model"] . "</h1>
-										<p>$" . $row["year"] . ",<br>
-											" . $row["type"] . "</p>
-										<h2>Price $" . $row["price"] . " </h2> 
+										<p>" . $row["year"] . ", " . $row["transmission"] ." " .  $row["bodytype"] .  "<br>
+											" . $row["engine"] . "<br> <br>
+											" . $row["desc"] . "</p>
+										<h1>Market Price $" . $row["price"] . " </h1> 
 											</div>
 										</div>
 									</div>
-								</div>";
-						/*		
-						echo '<button id="btnRM" onclick="rmtxt()">READ MORE</button>
-						<div id="readmore">
-								<h1>' . $row["model"] . '</h1>
-								<p>"' . $row["year"] . '<br>
-								' . $row["type"] . ' ,<br>
-								' . $row["mileage"] . 'km ,
-								
-								
-								</p>
-								<button id="btnRL">READ LESS</button>
-						</div>';*/
+								</div>";	
 					}
 				} else {
 					echo "0 results"; 
