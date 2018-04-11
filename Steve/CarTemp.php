@@ -1,3 +1,7 @@
+<?php
+session_start();
+?>
+
 <!doctype html>
 <html>
 <head>
@@ -68,7 +72,7 @@
 <!-- ____________________Featured Section ______________________________--> 
 <div class="allcontain">
 	<div class="feturedsection">
-		<h1 class="text-center"><span class="bdots">&bullet;</span>A L L<span class="carstxt">C A R S</span>&bullet;</h1>
+		<h1 class="text-center"><span class="bdots">&bullet;</span><?php echo $header ?><span class="carstxt">C A R S</span>&bullet;</h1>
 	</div>
 	<div class="feturedimage">
 		<div class="row firstrow">
@@ -88,23 +92,34 @@
 
 					while ($row = $result->fetch_assoc()) {
 
-						$headdivs = '<div class="col-lg-6 costumcol colborder1">
+						$modelname = $row["model"];
+						$headdivs = '<a href="indCarTemp.php?modelname=' . $modelname . '">
+									<div class="col-lg-6 costumcol colborder1">
 										<div class="row costumrow">
 											<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 img1colon">
 												<img src="' . $row["image"] .'" alt="porsche">
 											</div>
 										<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 txt1colon ">
 											<div class="featurecontant">';
+						
+						if($row["stock"] == null){
+							$stock = '<span> <font color="green">In Stock</font></span>';
+						}else{
+							$stock = '<span> <font color="red">Out of Stock</font></span>';
+						}
+						//$_SESSION["model"] = $row["model"];
 
 						echo $headdivs . "
 										<h1>" . $row["model"] . "</h1>
-										<p>" . $row["year"] . ", " . $row["transmission"] ." " .  $row["bodytype"] .  "<br>
-											" . $row["engine"] . "<br> <br>
-											" . $row["desc"] . "</p>
+										<p> Year: " . $row["year"] . " <br> Transmission Type: " . $row["transmission"] ."<br> Body Type: " .  $row["bodytype"] .  "<br>
+											Engine: " . $row["engine"] . "<br> <br>
+											" . $row["ethnicity"] . "<br>
+											 " . $stock . "</p>
 										<h1>Market Price $" . $row["price"] . " </h1> 
 											</div>
 										</div>
 									</div>
+									</a>
 								</div>";	
 					}
 				} else {
