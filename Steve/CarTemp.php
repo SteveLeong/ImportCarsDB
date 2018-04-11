@@ -24,8 +24,8 @@ session_start();
 				<li>Give us a call : +number </li>
 			</ul>
 			<ul class="logreg">
-				<li><a href="#">Login </a> </li>
-				<li><a href="#"><span class="register">Register</span></a></li>
+				<li><a href="login.html">Login </a> </li>
+				<li><a href="registration.html"><span class="register">Register</span></a></li>
 			</ul>
 	</div>
 	<!-- Navbar Up -->
@@ -100,8 +100,11 @@ session_start();
 												<img src="' . $row["image"] .'" alt=" ' .$row["model"] .' ">
 											</div>
 										<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 txt1colon ">
+											<button type="button"><a href="edit.html?modelname=' . $modelname .'"> Edit </a> </button> 
 											<div class="featurecontant">';
-						
+													/**------ BUTTON ABOVE ------
+													 * href sends model name to file
+													*/
 						if($row["stock"] == null){
 							$stock = '<span> <font color="green">In Stock</font></span>';
 						}else{

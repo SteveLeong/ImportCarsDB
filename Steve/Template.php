@@ -59,7 +59,7 @@
 					<a href="AllCars.php">ALL CARS</a>
  
 				</li>
-				<button><span class="postnewcar">POST NEW CAR</span></button>
+				<button><a href="post.html" <span class="postnewcar">POST NEW CAR</span></a></button>
 			</ul>
 		</div>
 	</nav>

@@ -2,7 +2,7 @@
 	session_start();
 	$_SESSION['model'] = $_GET['modelname'];
 
-	
+	/**GET model name from href */
 
 	
 ?>
@@ -28,8 +28,8 @@
 				<li>Give us a call : +number </li>
 			</ul>
 			<ul class="logreg">
-				<li><a href="#">Login </a> </li>
-				<li><a href="#"><span class="register">Register</span></a></li>
+				<li><a href="login.html">Login </a> </li>
+				<li><a href="registration.html"><span class="register">Register</span></a></li>
 			</ul>
 	</div>
 	<!-- Navbar Up -->

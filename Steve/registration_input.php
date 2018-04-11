@@ -19,18 +19,16 @@
 			} 
 			
 			//SQL QUEnRY
-			$username = $_POST["uname"];
-			$email = $_POST["eml"];
-			$password = $_POST["psw"];
-			$_SESSION['username'] = $username;
-			$_SESSION['email'] = $email;
-			$_SESSION['password'] = $password;
-			$sql = "INSERT INTO user('username','name','age','sex', 'email','address', 'password') VALUES 
-					(" . $username . ", null, null, null," . $email.",null, " . $password . ") ";
+			$username = $_GET["uname"];
+			$email = $_GET["eml"];
+			$password = $_GET["psw"];
+
+			$sql = "INSERT INTO user(username, name, age, sex, email, address, password) VALUES 
+					('$username', null, null, null, '$email', null, '$password') ";
 			$result = $conn -> query($sql);
 			
 			//echo "Registration Successful!  Welcome $id";
-			//echo '<meta http-equiv=\"Refresh\" content=\"2; index.php\">';
+			echo '<a href="index.php"> Welcome, ' . $username . '. Click to redirect</a>';
 		?>
 	</body>
 </html>
