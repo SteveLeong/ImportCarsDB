@@ -97,7 +97,7 @@ session_start();
 									<div class="col-lg-6 costumcol colborder1">
 										<div class="row costumrow">
 											<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 img1colon">
-												<img src="' . $row["image"] .'" alt="porsche">
+												<img src="' . $row["image"] .'" alt=" ' .$row["model"] .' ">
 											</div>
 										<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 txt1colon ">
 											<div class="featurecontant">';
