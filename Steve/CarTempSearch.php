@@ -1,6 +1,9 @@
 <?php
 	session_start();
-	$user = $_SESSION['user'];
+	if(!isset($_SESSION['username'])){
+		$_SESSION['username'] = $_GET['username'];
+   }
+   $user = $_SESSION['username'];
 ?>
 
 <!doctype html>
@@ -37,7 +40,7 @@
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand logo" href="#"><img src="image/group20logo.png" alt="logo"></a>
+				<a class="navbar-brand logo" href="#"><img src="image/logo1.png" alt="logo"></a>
 			</div>	 
 		</div>
 		<div class="collapse navbar-collapse" id="upmenu">
@@ -52,10 +55,10 @@
 				</li>
 				
 				<li>
-					<a href="AllCars.php">ALL CARS</a>
+					<a href="AllCars_user.php">ALL CARS</a>
  
 				</li>
-				<!--<button><a href="post.html" <span class="postnewcar">POST NEW CAR</span></a></button>-->
+				<button><a href="post.html" <span class="postnewcar">POST NEW CAR</span></a></button>
 			</ul>
 		</div>
 	</nav>
@@ -79,20 +82,17 @@
 				// SQL QUERY
 				$sql = $query;
 				$result = $conn->query($sql);
-
 				if ($result->num_rows > 0) {
-
 					while ($row = $result->fetch_assoc()) {
-
 						$modelname = $row["model"];
-						$headdivs = '<a href="indCarTemp.php?modelname=' . $modelname . '">
+						$headdivs = '<a href="indCarTemp_user.php?modelname=' . $modelname . '">
 									<div class="col-lg-6 costumcol colborder1">
 										<div class="row costumrow">
 											<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 img1colon">
 												<img src="' . $row["image"] .'" alt=" ' .$row["model"] .' ">
 											</div>
 										<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 txt1colon ">
-										
+											
 											<div class="featurecontant">';
 													/**------ BUTTON ABOVE ------
 													 * href sends model name to file
@@ -103,7 +103,6 @@
 							$stock = '<span> <font color="red">Out of Stock</font></span>';
 						}
 						//$_SESSION["model"] = $row["model"];
-
 						echo $headdivs . "
 										<h1>" . $row["model"] . "</h1>
 										<p> Year: " . $row["year"] . " <br> Transmission Type: " . $row["transmission"] ."<br> Body Type: " .  $row["bodytype"] .  "<br>

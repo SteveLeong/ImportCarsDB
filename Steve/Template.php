@@ -65,24 +65,21 @@
 				<img src="image/oldcar.jpg" alt="oldcar">
 				<div class="carousel-caption">
 					<h2>Porsche 356</h2>
-					<p>Lorem ipsum dolor sit amet, consectetur ,<br>
-						sed do eiusmod tempor incididunt ut labore </p>
+					<p></p>
 				</div>
 			</div>
 			<div class="item">
 				<img src="image/porche.jpg" alt="porche">
 				<div class="carousel-caption">
-					<h2>Porche</h2>
-						<p>Lorem ipsum dolor sit amet, consectetur ,<br>
-						sed do eiusmod tempor incididunt ut labore </p>
+					<h2>Porche 263</h2>
+						<p> </p>
 				</div>
 			</div>
 			<div class="item">
 				<img src="image/benz.jpg" alt="benz">
 				<div class="carousel-caption">
-					<h2>Car</h2>
-					<p>Lorem ipsum dolor sit amet, consectetur ,<br>
-						sed do eiusmod tempor incididunt ut labore </p>
+					<h2>Mercedes</h2>
+					<p> </p>
 				</div>
 			</div>
 		</div>
@@ -96,47 +93,26 @@
 					<span class="icon-bar"></span>
 				</button>
 			</div>
+		
 			<div class="collapse navbar-collapse" id="navbarmidle">
 				<div class="searchtxt">
-					<h1>SEARCH TEXT</h1>
+					<h1>SEARCH CAR</h1>
 				</div>
-				<form class="navbar-form navbar-left searchformmargin" role="search">
+				<form class="navbar-form navbar-left searchformmargin" action="searchcar.php?modelname=' . $modelname .'" role="search" method="GET">
 					<div class="form-group">
-						<input type="text" class="form-control searchform" placeholder="Enter Keyword">
+						<input type="text" class="form-control searchform" placeholder="Enter Manufacturer" name="manufacturer" required>
+						<input type="text" class="form-control searchform" placeholder="Enter Model" name="modelname" required>
+						<input type="text" class="form-control searchform" placeholder="Enter Year" name="year" required>
+						<select name="bodytype" >
+							<option value="Coupe">COUPE</option>
+							<option value="Sedan">SEDAN</option>
+							<option value="Hatchback">HATCHBACK</option>
+							<option value="Convertible">CONVERTIBLE</option>
+						</select>
+						<button class="searchbutton"><span class="glyphicon glyphicon-search "></span></button>
 					</div>
+			
 				</form>
-				<ul class="nav navbar-nav navbarborder">
-					<li class="li-category">
-						<a class="btn  dropdown-toggle btn-costume"  id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">Category<span class="glyphicon glyphicon-chevron-down downicon"></span></a>
-						<ul class="dropdown-menu" id="mydd">
-							<li><a href="#">Epic</a></li>
-							<li><a href="#">Old</a></li>
-							<li><a href="#">New</a></li>
-						</ul>
-					</li>
-					<li class="li-minyear"><a class="btn  dropdown-toggle btn-costume"  id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">Min Year <span class="glyphicon glyphicon-chevron-down downicon"></span></a>
-						<ul class="dropdown-menu" id="mydd2">
-							<li><a href="#">1</a></li>
-							<li><a href="#">2</a></li>
-							<li><a href="#">3</a></li>
-						</ul>
-					</li>
-					<li class="li-maxyear"><a class="btn dropdown-toggle btn-costume"  id="dropdownMenu3" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">Max Year <span class="glyphicon glyphicon-chevron-down downicon"></span></a>
-						<ul class="dropdown-menu" id="mydd3">
-							<li><a href="#">1900</a></li>
-							<li><a href="#">2000</a></li>
-							<li><a href="#">2016</a></li>
-						</ul>
-					</li>
-					<li class="li-slideprice">
-						<p> <label class="slidertxt" for="amount">Price </label>
-							<input class="priceslider" type="text" id="amount" readonly="readonly">
-						</p>
-							<div id="slider-range"></div>
-							
-					</li>
-					<li class="li-search"> <button class="searchbutton"><span class="glyphicon glyphicon-search "></span></button></li>
-				</ul>
  
 			</div>
 		</nav>
@@ -152,22 +128,28 @@
 			<div class="col-lg-6 costumcol colborder1">
 				<div class="row costumrow">
 					<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 img1colon">
-						<img src="image/featurporch.jpg" alt="porsche">
+						<img src="image/GTR.jpg" alt="porsche">
 					</div>
 					<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 txt1colon ">
 						<div class="featurecontant">
-							<h1>LOREM daskbj</h1>
-							<p>"Lorem ipsum dolor sit amet, consectetur ,<br>
-			 						sed do eiusmod tempor incididunt </p>
-			 				<h2>Price &euro;</h2>
+							<h1>Nissan GTR</h1>
+							<p>"Doesn’t matter what you call it—GT-R or,<br>
+								more fittingly, Godzilla—Nissan’s range topper <br>
+								is a supercar-stomping, high-tech dynamo."
+			 					 </p>
+			 				<h2>Price &euro; 1000000</h2>
 			 				<button id="btnRM" onclick="rmtxt()">READ MORE</button>
 			 				<div id="readmore">
-			 						<h1>Car Name</h1>
-			 						<p>"Lorem ipsum dolor sit amet, consectetur ,<br>
-			 						sed do eiusmod tempor incididunt <br>"Lorem ipsum dolor sit amet, consectetur ,<br>
-			 						sed do eiusmod tempor incididunt"Lorem ipsum dolor sit amet, consectetur1 ,
-			 						sed do eiusmod tempor incididunt"Lorem ipsum dolor sit amet, consectetur1
-			 						sed do eiusmod tempor incididunt"Lorem ipsum dolor sit amet, consectetur1<br>
+			 						<h1>Nissan GTR</h1>
+									 <p>"Doesn’t matter what you call it—GT-R or,<br>
+									more fittingly, Godzilla—Nissan’s range topper <br>  
+									is a supercar-stomping, high-tech dynamo.<br>
+									Its 3.8-liter twin-turbo V-6 makes a mighty<br> 565 hp 
+									while a six-speed dual-clutch Automatic<br> and all-wheel drive 
+									team up to put all that power to the pavement. <br>
+									The GT-R’s quick steering, rigid structure and <br> adjustable
+									suspension can make even amateurs feel <br>positively heroic 
+									from behind the wheel."
 			 						</p>
 			 						<button id="btnRL">READ LESS</button>
 			 				</div>
@@ -182,10 +164,9 @@
 					</div>
 					<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 txt1colon ">
 						<div class="featurecontant">
-							<h1>LOREM IPSUM</h1>
-							<p>"Lorem ipsum dolor sit amet, consectetur ,<br>
-			 						sed do eiusmod tempor incididunt </p>
-			 				<h2>Price &euro;</h2>
+							<h1>Porche 911</h1>
+							<p>"Very very fast fast"</p>
+			 				<h2>Price &euro; 4000000</h2>
 			 				<button id="btnRM2">READ MORE</button>
 			 				<div id="readmore2">
 			 						<h1>Car Name</h1>
