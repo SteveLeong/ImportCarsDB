@@ -1,0 +1,21 @@
+<div class="collapse navbar-collapse" id="navbarmidle">
+				<div class="searchtxt">
+					<h1>SEARCH CAR</h1>
+				</div>
+				<form class="navbar-form navbar-left searchformmargin" action="searchcar.php?modelname=' . $modelname .'" role="search" method="GET">
+					<div class="form-group">
+						<input type="text" class="form-control searchform" placeholder="Enter Manufacturer" name="manufacturer" required>
+						<input type="text" class="form-control searchform" placeholder="Enter Model" name="modelname" required>
+						<input type="text" class="form-control searchform" placeholder="Enter Year" name="year" required>
+						<select name="bodytype" >
+							<option value="Coupe">COUPE</option>
+							<option value="Sedan">SEDAN</option>
+							<option value="Hatchback">HATCHBACK</option>
+							<option value="Convertible">CONVERTIBLE</option>
+						</select>
+						<button class="searchbutton"><span class="glyphicon glyphicon-search "></span></button>
+					</div>
+				
+				
+				</form>
+			</div>
