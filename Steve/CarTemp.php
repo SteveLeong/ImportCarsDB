@@ -63,7 +63,7 @@ session_start();
 					<a href="AllCars.php">ALL CARS</a>
  
 				</li>
-				<button><span class="postnewcar">POST NEW CAR</span></button>
+				<button><a href="post.html" <span class="postnewcar">POST NEW CAR</span></a></button>
 			</ul>
 		</div>
 	</nav>
@@ -100,7 +100,7 @@ session_start();
 												<img src="' . $row["image"] .'" alt=" ' .$row["model"] .' ">
 											</div>
 										<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 txt1colon ">
-											<button type="button"><a href="edit.html?modelname=' . $modelname .'"> Edit </a> </button> 
+											<button type="button"><a href="edit.php?modelname=' . $modelname .'"> Edit </a> </button> 
 											<div class="featurecontant">';
 													/**------ BUTTON ABOVE ------
 													 * href sends model name to file
