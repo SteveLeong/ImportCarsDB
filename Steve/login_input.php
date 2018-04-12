@@ -37,6 +37,7 @@
 				if($row2 > 0){
 					
 					echo '<a href="Template_admin.php?username=' . $username .'"> Welcome Admin ' . $username . '! Click to redirect</a>';
+
 					//insert admin page here, need to implement still
 				}else{
 					setcookie("user", "$username", time()+3600);

@@ -54,14 +54,7 @@
 						<li><a href="CarCategoryE.php">European</a></li>
 					</ul>
 				</li>
-				<li class="dropdown">
-						<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">DEALERS <span class="caret"></span></a>
-						<ul class="dropdown-menu dropdowncostume">
-							<li><a href="#">1</a></li>
-							<li><a href="#">2</a></li>
-							<li><a href="3">3</a></li>
-						</ul>
-				</li>
+				
 				<li>
 					<a href="AllCars.php">ALL CARS</a>
  
@@ -129,7 +122,7 @@
 								</div>";	
 					}
 				} else {
-					echo "0 results"; 
+					echo "0 results found"; 
 				}
 				$conn->close();
 			?>
