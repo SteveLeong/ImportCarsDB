@@ -1,7 +1,9 @@
 <?php
-	$uname = $_GET['modelname'];
-	setcookie("user", "$uname", time()+3600);
-
+	session_start();
+	if(!isset($_SESSION['username'])){
+		$_SESSION['username'] = $_GET['username'];
+   	}
+	$user = $_SESSION['username'];
 ?>
 
 <!doctype html>
@@ -22,9 +24,11 @@
 <!-- Header -->
 <div class="allcontain">
 	<div class="header">
-			<ul class="givusacall">
-				<li>Give us a call : +number </li>
-			</ul>
+			<?php
+				echo '<ul class="givusacall">
+					<li>Welcome,' .  $user . ' </li>
+				</ul>'
+			?>
 			<<ul class="logreg">
 				<li><a href="index.php">Logout </a> </li>
 				<!--<li><a href="registration.html"><span class="register">Register</span></a></li>-->

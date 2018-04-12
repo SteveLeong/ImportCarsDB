@@ -35,7 +35,7 @@
 			$result = $conn -> query($sql);
 			
 			echo "Car Edited: $model  ";
-			echo '<a href="Template_admin.php">BACK TO HOME</a>';
+			echo '<a href="AllCars_admin.php">BACK TO ALL CARS</a>';
 		?>
 	</body>
 </html>

@@ -17,7 +17,7 @@
 <div class="allcontain">
 	<div class="header">
 			<ul class="givusacall">
-				<li>Give us a call : +number </li>
+				<li> </li>
 			</ul>
 			<ul class="logreg">
 				<li><a href="login.html">Login </a> </li>

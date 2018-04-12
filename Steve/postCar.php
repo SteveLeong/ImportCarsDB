@@ -32,8 +32,8 @@
             
 			$result = $conn -> query($sql);
 			
-			echo "Car Posted!  $model";
-			echo '<a href="Template_user.php">CLICK PLZ</a>';
+			echo "Car Posted!  $model ";
+			echo '<a href="Template_user.php">Click to return to Homepage</a>';
 		?>
 	</body>
 </html>

@@ -1,5 +1,6 @@
 <?php
-session_start();
+	session_start();
+	$user = $_SESSION['username'];
 ?>
 
 <!doctype html>
@@ -20,9 +21,11 @@ session_start();
 <!-- Header -->
 <div class="allcontain">
 	<div class="header">
-			<ul class="givusacall">
-				<li>Give us a call : +number </li>
-			</ul>
+			<?php
+				echo '<ul class="givusacall">
+					<li>Welcome,' .  $user . ' </li>
+				</ul>'
+			?>
 			<<ul class="logreg">
 				<li><a href="index.php">Logout </a> </li>
 				<!--<li><a href="registration.html"><span class="register">Register</span></a></li>-->
@@ -47,8 +50,8 @@ session_start();
 				<li class="dropdown">
 					<a href="#" class="dropdown-toggle"	data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">CATEGORIES <span class="caret"></span></a>
 					<ul class="dropdown-menu dropdowncostume">
-						<li><a href="CarCategoryJ.php">Japanese</a></li>
-						<li><a href="CarCategoryE.php">European</a></li>
+						<li><a href="CarCategoryJAdmin.php">Japanese</a></li>
+						<li><a href="CarCategoryEAdmin.php">European</a></li>
 					</ul>
 				</li>
 				<li class="dropdown">
@@ -93,14 +96,15 @@ session_start();
 					while ($row = $result->fetch_assoc()) {
 
 						$modelname = $row["model"];
-						$headdivs = '<a href="indCarTemp.php?modelname=' . $modelname . '">
+						$headdivs = '<a href="indCarTemp_admin.php?modelname=' . $modelname . '">
 									<div class="col-lg-6 costumcol colborder1">
 										<div class="row costumrow">
 											<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 img1colon">
 												<img src="' . $row["image"] .'" alt=" ' .$row["model"] .' ">
 											</div>
 										<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 txt1colon ">
-											<button type="button"><a href="edit.php?modelname=' . $modelname .'"> Edit </a> </button> 
+											<button type="button"><a href="edit.php?modelname=' . $modelname .'"> Edit </a> </button>
+											<button type="button"><a href="delete.php?modelname=' . $modelname .'"> Delete </a> </button>
 											<div class="featurecontant">';
 													/**------ BUTTON ABOVE ------
 													 * href sends model name to file

@@ -1,7 +1,7 @@
 <?php
 	session_start();
 	$_SESSION['model'] = $_GET['modelname'];
-
+	$user = $_SESSION['username'];
 	/**GET model name from href */
 
 	
@@ -24,9 +24,11 @@
 <!-- Header -->
 <div class="allcontain">
 	<div class="header">
-			<ul class="givusacall">
-				<li>Give us a call : +number </li>
-			</ul>
+			<?php
+				echo '<ul class="givusacall">
+					<li>Welcome,' .  $user . ' </li>
+				</ul>'
+			?>
 			<ul class="logreg">
 				<li><a href="index.php">Logout </a> </li>
 				<!--<li><a href="registration.html"><span class="register">Register</span></a></li>-->
@@ -51,8 +53,8 @@
 				<li class="dropdown">
 					<a href="#" class="dropdown-toggle"	data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">CATEGORIES <span class="caret"></span></a>
 					<ul class="dropdown-menu dropdowncostume">
-						<li><a href="CarCategoryJ.php">Japanese</a></li>
-						<li><a href="CarCategoryE.php">European</a></li>
+						<li><a href="CarCategoryJAdmin.php">Japanese</a></li>
+						<li><a href="CarCategoryEAdmin.php">European</a></li>
 					</ul>
 				</li>
 				<li class="dropdown">

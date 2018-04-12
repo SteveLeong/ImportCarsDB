@@ -1,5 +1,6 @@
 <?php
-session_start();
+	session_start();
+	$user = $_SESSION['user'];
 ?>
 
 <!doctype html>
@@ -20,9 +21,11 @@ session_start();
 <!-- Header -->
 <div class="allcontain">
 	<div class="header">
-			<ul class="givusacall">
-				<li>Give us a call : +number </li>
-			</ul>
+			<?php
+				echo '<ul class="givusacall">
+					<li>Welcome,' .  $user . ' </li>
+				</ul>'
+			?>
 			<ul class="logreg">
 				<li><a href="login.html">Login </a> </li>
 				<li><a href="registration.html"><span class="register">Register</span></a></li>

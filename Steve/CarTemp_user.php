@@ -1,5 +1,6 @@
 <?php
-session_start();
+	session_start();
+	$user = $_SESSION['username'];
 ?>
 
 <!doctype html>
@@ -20,9 +21,11 @@ session_start();
 <!-- Header -->
 <div class="allcontain">
 	<div class="header">
-			<ul class="givusacall">
-				<li>Give us a call : +number </li>
-			</ul>
+			<?php
+				echo '<ul class="givusacall">
+					<li>Welcome,' .  $user . ' </li>
+				</ul>'
+			?>
 			<ul class="logreg">
 				<li><a href="Template_user.php">Logout </a> </li>
 				<!--<li><a href="registration.html"><span class="register">Register</span></a></li>-->
@@ -93,7 +96,7 @@ session_start();
 					while ($row = $result->fetch_assoc()) {
 
 						$modelname = $row["model"];
-						$headdivs = '<a href="indCarTemp.php?modelname=' . $modelname . '">
+						$headdivs = '<a href="indCarTemp_user.php?modelname=' . $modelname . '">
 									<div class="col-lg-6 costumcol colborder1">
 										<div class="row costumrow">
 											<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 img1colon">

@@ -2,5 +2,5 @@
 	$title = "Categories";
 	$query = "SELECT * FROM car WHERE ethnicity = 'european' ";
 	$header = "E U R O P E A N";
-	include 'CarTemp_user.php';
+	include 'CarTemp_admin.php';
 ?>
