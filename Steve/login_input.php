@@ -36,10 +36,11 @@
 				$row2 = $result2 -> fetch_assoc();
 				if($row2 > 0){
 					
-					echo '<a href="index.php"> Welcome Admin ' . $username . '! Click to redirect</a>';
+					echo '<a href="Template_admin.php?username=' . $username .'"> Welcome Admin ' . $username . '! Click to redirect</a>';
 					//insert admin page here, need to implement still
 				}else{
-					echo '<a href="index.php"> Welcome, ' . $username . '. Click to redirect</a>';
+					setcookie("user", "$username", time()+3600);
+					echo '<a href="Template_user.php?username=' . $username .'"> Welcome, ' . $username . '. Click to redirect</a>';
 				}
 			}
 			else {

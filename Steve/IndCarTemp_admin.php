@@ -28,8 +28,8 @@
 				<li>Give us a call : +number </li>
 			</ul>
 			<ul class="logreg">
-				<li><a href="login.html">Login </a> </li>
-				<li><a href="registration.html"><span class="register">Register</span></a></li>
+				<li><a href="index.php">Logout </a> </li>
+				<!--<li><a href="registration.html"><span class="register">Register</span></a></li>-->
 			</ul>
 	</div>
 	<!-- Navbar Up -->
@@ -47,7 +47,7 @@
 		</div>
 		<div class="collapse navbar-collapse" id="upmenu">
 			<ul class="nav navbar-nav" id="navbarontop">
-				<li class="active"><a href="index.php">HOME</a> </li>
+				<li class="active"><a href="Template_admin.php">HOME</a> </li>
 				<li class="dropdown">
 					<a href="#" class="dropdown-toggle"	data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">CATEGORIES <span class="caret"></span></a>
 					<ul class="dropdown-menu dropdowncostume">
@@ -64,10 +64,10 @@
 						</ul>
 				</li>
 				<li>
-					<a href="AllCars.php">ALL CARS</a>
+					<a href="AllCars_admin.php">ALL CARS</a>
  
 				</li>
-				<!--<button><a href="post.html" <span class="postnewcar">POST NEW CAR</span></a></button>-->
+				<!--<button><span class="postnewcar">POST NEW CAR</span></button>-->
 			</ul>
 		</div>
 	</nav>

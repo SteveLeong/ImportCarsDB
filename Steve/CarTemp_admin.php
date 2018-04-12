@@ -1,11 +1,7 @@
 <?php
-	session_start();
-	$_SESSION['model'] = $_GET['modelname'];
-
-	/**GET model name from href */
-
-	
+session_start();
 ?>
+
 <!doctype html>
 <html>
 <head>
@@ -27,9 +23,9 @@
 			<ul class="givusacall">
 				<li>Give us a call : +number </li>
 			</ul>
-			<ul class="logreg">
-				<li><a href="login.html">Login </a> </li>
-				<li><a href="registration.html"><span class="register">Register</span></a></li>
+			<<ul class="logreg">
+				<li><a href="index.php">Logout </a> </li>
+				<!--<li><a href="registration.html"><span class="register">Register</span></a></li>-->
 			</ul>
 	</div>
 	<!-- Navbar Up -->
@@ -47,7 +43,7 @@
 		</div>
 		<div class="collapse navbar-collapse" id="upmenu">
 			<ul class="nav navbar-nav" id="navbarontop">
-				<li class="active"><a href="index.php">HOME</a> </li>
+				<li class="active"><a href="Template_admin.php">HOME</a> </li>
 				<li class="dropdown">
 					<a href="#" class="dropdown-toggle"	data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">CATEGORIES <span class="caret"></span></a>
 					<ul class="dropdown-menu dropdowncostume">
@@ -64,7 +60,7 @@
 						</ul>
 				</li>
 				<li>
-					<a href="AllCars.php">ALL CARS</a>
+					<a href="AllCars_admin.php">ALL CARS</a>
  
 				</li>
 				<!--<button><a href="post.html" <span class="postnewcar">POST NEW CAR</span></a></button>-->
@@ -72,52 +68,71 @@
 		</div>
 	</nav>
 </div>
-<!--_______________________________________ Carousel__________________________________ -->
+
+<!-- ____________________Featured Section ______________________________--> 
 <div class="allcontain">
 	<div class="feturedsection">
-		<h1 class="text-center"><span class="bdots">&bullet;</span>C A R<span class="carstxt">D E T A I L S</span>&bullet;</h1>
+		<h1 class="text-center"><span class="bdots">&bullet;</span><?php echo $header ?><span class="carstxt">C A R S</span>&bullet;</h1>
 	</div>
-	
-				
-					<?php
-						require 'Credentials.php';
-						$conn = new mysqli($host, $user, $password, $database);
-						// Check connection
-						if ($conn->connect_error) {
-							die("Connection failed: " . $conn->connect_error);
-						} 
-						$target = $_SESSION["model"];
-						$sql = "SELECT * FROM car WHERE model='$target'";
-						$result = $conn->query($sql);
-						while($row = $result->fetch_assoc()){
+	<div class="feturedimage">
+		<div class="row firstrow">
 
-							if($row["stock"] == null){
-								$stock = '<span> <font color="green">In Stock</font></span>';
-							}else{
-								$stock = '<span> <font color="red">Out of Stock</font></span>';
-							}
+			<?php 
+				require 'Credentials.php';
+				$conn = new mysqli($host, $user, $password, $database);
+				// Check connection
+				if ($conn->connect_error) {
+					die("Connection failed: " . $conn->connect_error);
+				} 
+				// SQL QUERY
+				$sql = $query;
+				$result = $conn->query($sql);
 
-							$heads = '<div class="col-lg-12 customcol colborder1">
+				if ($result->num_rows > 0) {
+
+					while ($row = $result->fetch_assoc()) {
+
+						$modelname = $row["model"];
+						$headdivs = '<a href="indCarTemp.php?modelname=' . $modelname . '">
+									<div class="col-lg-6 costumcol colborder1">
 										<div class="row costumrow">
 											<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 img1colon">
-												<img src="'.$row["image"] .'" alt="oldcar">
+												<img src="' . $row["image"] .'" alt=" ' .$row["model"] .' ">
 											</div>
-											<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 txt1colon ">
-												<div class="featurecontant">';
-
-							echo $heads.'<h1>' . $row["model"] . '</h1>
-										<p> Year: ' . $row["year"] . ' <br> Transmission Type: ' . $row["transmission"] .'<br> Body Type: ' .  $row["bodytype"] .  '<br>
-											Engine: ' . $row["engine"] . ' <br>
-											' . $row["ethnicity"] . '<br> <br>
-											' . $row["desc"] .' <br> <br>
-											 ' . $stock . '</p>
-										<h1>Market Price $' . $row["price"] . ' </h1> ';
+										<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 txt1colon ">
+											<button type="button"><a href="edit.php?modelname=' . $modelname .'"> Edit </a> </button> 
+											<div class="featurecontant">';
+													/**------ BUTTON ABOVE ------
+													 * href sends model name to file
+													*/
+						if($row["stock"] == null){
+							$stock = '<span> <font color="green">In Stock</font></span>';
+						}else{
+							$stock = '<span> <font color="red">Out of Stock</font></span>';
 						}
-						
-					?>
-	
-</div>
+						//$_SESSION["model"] = $row["model"];
 
+						echo $headdivs . "
+										<h1>" . $row["model"] . "</h1>
+										<p> Year: " . $row["year"] . " <br> Transmission Type: " . $row["transmission"] ."<br> Body Type: " .  $row["bodytype"] .  "<br>
+											Engine: " . $row["engine"] . "<br> <br>
+											" . $row["ethnicity"] . "<br>
+											 " . $stock . "</p>
+										<h1>Market Price $" . $row["price"] . " </h1> 
+											</div>
+										</div>
+									</div>
+									</a>
+								</div>";	
+					}
+				} else {
+					echo "0 results"; 
+				}
+				$conn->close();
+			?>
+			
+		</div>
+	</div>
 
 <script type="text/javascript" src="source/bootstrap-3.3.6-dist/js/jquery.js"></script>
 <script type="text/javascript" src="source/js/isotope.js"></script>

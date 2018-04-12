@@ -27,16 +27,13 @@
 			$bodytype = $_GET["bodytype"];
             $price = $_GET["price"];
             
-            echo $model;
-
-
 			$sql = "INSERT INTO car(model, price, transmission, engine, year, manufacturer, ethnicity, bodytype, stock, image, descrip) VALUES 
             ('$model', '$price', '$transmission', '$engine', '$year', '$manufacturer', null, '$bodytype', null, null, null)";
             
 			$result = $conn -> query($sql);
 			
 			echo "Car Posted!  $model";
-			echo '<a href="index.php">CLICK PLZ</a>';
+			echo '<a href="Template_user.php">CLICK PLZ</a>';
 		?>
 	</body>
 </html>

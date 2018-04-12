@@ -77,11 +77,11 @@
 					<li><a href="#"><i class="fa fa-pinterest"></i></a></li>
 				</ul>
 			<ul class="givusacall">
-					<li><a href="index.php">Home </a> </li>
+					<li><a href="Template_admin.php">Home </a> </li>
 					</ul>
 			<ul class="logreg">
-				<li><a href="login.html">Login </a> </li>
-				<li><a href="registration.html"><span class="register">Register</span></a></li>
+				<li><a href="index.php">Logout </a> </li>
+				<!--<li><a href="registration.html"><span class="register">Register</span></a></li>-->
 			</ul>
 		</div>
 	</div>
